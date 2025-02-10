@@ -1,5 +1,6 @@
 package com.jhonatan.springdatajpa.repository;
 
+import com.jhonatan.springdatajpa.models.Address;
 import com.jhonatan.springdatajpa.models.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,13 @@ class CustomerRepositoryTest {
         Customer customer01 = Customer.builder()
                 .firstName("test01")
                 .lastName("test01")
-               // .email(null)
+                // .email(null)
                 .build();
         repository.save(customer);
     }
 
     @Test
-    public void findCustomerByFirstName(){
+    public void findCustomerByFirstName() {
         Customer customer = repository.findByFirstName("test02").get();
         System.out.println(customer);
     }
@@ -41,5 +42,22 @@ class CustomerRepositoryTest {
     public void findAllCustomers() {
         List<Customer> customers = repository.findAll();
         customers.forEach(System.out::println);
+    }
+
+    @Test
+    public void saveCustomerWithAddressEmbeddable() {
+        Address address = Address.builder()
+                .city("city01")
+                .mainStreet("mainCity01")
+                .secondaryStreet("secondaryCity01")
+                .build();
+
+        Customer customer = Customer.builder()
+                .firstName("test04")
+                .lastName("test04")
+                .email("test04@gmail.com")
+                .address(address)
+                .build();
+        repository.save(customer);
     }
 }
