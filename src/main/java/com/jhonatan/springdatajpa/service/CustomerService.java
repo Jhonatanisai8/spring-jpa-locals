@@ -1,4 +1,4 @@
-package com.jhonatan.springdatajpa.service.customerServiceImple;
+package com.jhonatan.springdatajpa.service;
 
 import com.jhonatan.springdatajpa.models.Customer;
 
