@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -27,5 +29,17 @@ class CustomerRepositoryTest {
                // .email(null)
                 .build();
         repository.save(customer);
+    }
+
+    @Test
+    public void findCustomerByFirstName(){
+        Customer customer = repository.findByFirstName("test02").get();
+        System.out.println(customer);
+    }
+
+    @Test
+    public void findAllCustomers() {
+        List<Customer> customers = repository.findAll();
+        customers.forEach(System.out::println);
     }
 }
