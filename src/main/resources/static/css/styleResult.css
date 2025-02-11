@@ -1,0 +1,23 @@
+div {
+    max-width: 500px;
+    margin: auto;
+    background-color: #4CAF50;
+}
+
+ul {
+    background: #4CAF50;
+    padding: 20px;
+}
+
+li {
+    background: #4CAF50;
+    color: darkred;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+ul li {
+    background: #4CAF50;
+    color: darkblue;
+    margin: 5px;
+}
