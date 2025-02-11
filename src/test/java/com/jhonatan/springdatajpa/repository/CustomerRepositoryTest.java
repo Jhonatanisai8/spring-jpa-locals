@@ -60,4 +60,34 @@ class CustomerRepositoryTest {
                 .build();
         repository.save(customer);
     }
+
+    @Test
+    public void findCustomersByFirstNameContaining() {
+        List<Customer> customers = repository.findByFirstNameContaining("lo");
+        customers.forEach(System.out::println);
+    }
+
+    @Test
+    public void findCsutomersByLastNameNotNull() {
+        List<Customer> customerList = repository.findByLastNameNotNull();
+        customerList.forEach(System.out::println);
+    }
+
+    @Test
+    public void findCsutomersByAddress_City() {
+        List<Customer> customerList = repository.findByAddress_City("Ciudad A");
+        customerList.forEach(System.out::println);
+    }
+
+    @Test
+    public void findCsutomersfindByAddress_MainStreet() {
+        List<Customer> customerList = repository.findByAddress_MainStreet("Av. Ignacia Chefer");
+        customerList.forEach(System.out::println);
+    }
+
+    @Test
+    public void orderByCustomer() {
+        List<Customer> customers = repository.findByFirstNameContainingOrderByFirstName("U");
+        customers.forEach(System.out::println);
+    }
 }
