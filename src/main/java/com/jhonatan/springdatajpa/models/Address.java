@@ -18,20 +18,24 @@ import lombok.NoArgsConstructor;
         {
                 @AttributeOverride(
                         name = "city",
-                        column = @Column( name = "customer_city")
+                        column = @Column( name = "customer_city",length = 45,nullable = false)
                 ),
                 @AttributeOverride(
                         name = "mainStreet",
-                        column = @Column(name = "customer_main_street")
+                        column = @Column(name = "customer_main_street",length = 50)
                 ),
                 @AttributeOverride(
                         name = "secondaryStreet",
-                        column = @Column(name = "customer_secondary_street")
+                        column = @Column(name = "customer_secondary_street",length = 50)
                 )
         }
 )
 public class Address {
+
+    @Column(length = 45,nullable = false)
     private String city;
+    @Column(length = 50)
     private String mainStreet;
+    @Column(length = 50)
     private String secondaryStreet;
 }
