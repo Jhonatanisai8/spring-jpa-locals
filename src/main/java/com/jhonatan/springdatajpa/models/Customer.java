@@ -26,15 +26,15 @@ import java.util.Locale;
 public class Customer {
 
     @Id
-    @SequenceGenerator(
-            //el email sera unico
-            name = "customers_sequence",
-            sequenceName = "customers_sequence",
-            allocationSize = 1
-    )
+//    @SequenceGenerator(
+//            //el email sera unico
+//            name = "customers_sequence",
+//            sequenceName = "customers_sequence",
+//            allocationSize = 1
+//    )
     @GeneratedValue(
-            generator = "customers_sequence",
-            strategy = GenerationType.SEQUENCE
+            //generator = "customers_sequence",
+            strategy = GenerationType.IDENTITY
     )
     private Long customerId;
 
