@@ -11,22 +11,29 @@
         <h2 th:text="${tittle}"></h2>
 
         <label for="firstName">Nombres:</label>
-        <input type="text" id="firstName" name="firstName" placeholder="David Jhoe">
+        <input type="text" id="firstName" name="firstName" placeholder="David Jhoe" th:field="*{firstName}">
+        <p th:text="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
 
         <label for="lastName">Apellidos:</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Florez Perez">
+        <input type="text" id="lastName" name="lastName" placeholder="Florez Perez" th:field="*{lastName}">
+        <p th:text="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="example@gmail.com">
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" th:field="*{email}">
+        <p th:text="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
 
         <label for="city">Ciudad:</label>
-        <input type="text" id="city" name="city" placeholder="City">
+        <input type="text" id="city" name="city" placeholder="City" th:field="*{address.city}">
+        <p th:text="${#fields.hasErrors('address.city')}" th:errors="*{address.city}"></p>
 
         <label for="mainStreet">Calle Principal:</label>
-        <input type="text" id="mainStreet" name="mainStreet" placeholder="Main Street">
+        <input type="text" id="mainStreet" name="mainStreet" placeholder="Main Street" th:field="*{address.mainStreet}">
+        <p th:text="${#fields.hasErrors('address.mainStreet')}" th:errors="*{address.mainStreet}"></p>
 
         <label for="secondaryStreet">Calle Secundaria:</label>
-        <input type="text" id="secondaryStreet" name="secondaryStreet" placeholder="Secondary Street">
+        <input type="text" id="secondaryStreet" name="secondaryStreet" placeholder="Secondary Street"
+               th:field="*{address.secondaryStreet}">
+        <p th:text="${#fields.hasErrors('address.secondaryStreet')}" th:errors="*{address.secondaryStreet}"></p>
 
         <input class="button_send" type="submit" value="Enviar">
     </form>

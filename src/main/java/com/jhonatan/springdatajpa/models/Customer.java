@@ -1,7 +1,9 @@
 package com.jhonatan.springdatajpa.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -39,12 +41,14 @@ public class Customer {
     private Long customerId;
 
     @Size(max = 50)
-    @NotBlank
+    //@NotBlank
     private String firstName;
 
+    @NotEmpty
     @Size(max = 50)
     private String lastName;
 
+    @NotEmpty
     @Size(max = 50)
     @Column(
             name = "email_address",
@@ -52,9 +56,10 @@ public class Customer {
     )
     private String email;
 
-//    private String customerCity;
+    //    private String customerCity;
 //    private String customerMainStreet;
 //    private String customerSecondaryStreet;
     @Embedded
+    @Valid
     private Address address;
 }
