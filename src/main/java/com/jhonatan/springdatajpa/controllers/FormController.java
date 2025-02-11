@@ -34,6 +34,7 @@ public class FormController {
     @GetMapping("/form")
     public String form(Model model) {
         model.addAttribute("tittle", "Registro de Datos.");
+        model.addAttribute("tittleField", "Datos Personales");
         //objeto
         Customer customer = new Customer();
 //        customer.setFirstName("John");

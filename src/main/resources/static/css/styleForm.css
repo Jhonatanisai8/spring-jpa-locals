@@ -1,44 +1,69 @@
 body {
-    background-color: #000;
-}
-
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 12px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-label {
-    margin-left: auto;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     text-align: center;
-    padding: 10px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.button_send {
-    width: 100px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
+.formContainer {
+    max-width: 500px;
+    background-color: #818D92;
+    padding: 40px 0;
+    margin: 50px auto auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 45px #333;
+}
+
+.fieldContainer {
+    padding: 6px 20px;
+    max-width: 500px;
+}
+
+label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    background-color: #fff;
     border: none;
+    border: 2px solid #fff9;
+    padding: 6px 12px;
+    box-sizing: border-box;
     border-radius: 4px;
-    cursor: pointer;
+    margin: 5px auto auto;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    max-width: 600px;
+.fieldSendContainer {
+    width: 100px;
     margin: auto;
+    margin-top: 5px;
+}
+
+.fieldSendContainer > input {
+    background-color: #00BD9D;
+}
+
+p {
+    margin: 0;
+    color: #071155;
+}
+
+legend {
+    font-size: 18px; /* Un poco más grande para mayor visibilidad */
+    font-weight: bold;
+    color: #333;
+}
+
+fieldset {
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }

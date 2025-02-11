@@ -6,36 +6,54 @@
     <link rel="stylesheet" th:href="@{/css/styleForm.css}">
 </head>
 <body>
-<div>
+<div class="formContainer">
     <form th:action="@{/form}" th:object="${customer}" method="post">
         <h2 th:text="${tittle}"></h2>
 
-        <label for="firstName">Nombres:</label>
-        <input type="text" id="firstName" name="firstName" placeholder="David Jhoe" th:field="*{firstName}">
-        <p th:text="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+        <fieldset>
+            <legend th:text="${tittleField}"></legend>
+            <div class="fieldContainer">
+                <label for="firstName">Nombres:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="David Jhoe" th:field="*{firstName}">
+                <p th:text="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+            </div>
 
-        <label for="lastName">Apellidos:</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Florez Perez" th:field="*{lastName}">
-        <p th:text="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+            <div class="fieldContainer">
+                <label for="lastName">Apellidos:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Florez Perez" th:field="*{lastName}">
+                <p th:text="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="example@gmail.com" th:field="*{email}">
-        <p th:text="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+            <div class="fieldContainer">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" th:field="*{email}">
+                <p th:text="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+            </div>
 
-        <label for="city">Ciudad:</label>
-        <input type="text" id="city" name="city" placeholder="City" th:field="*{address.city}">
-        <p th:text="${#fields.hasErrors('address.city')}" th:errors="*{address.city}"></p>
+            <div class="fieldContainer">
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" name="city" placeholder="City" th:field="*{address.city}">
+                <p th:text="${#fields.hasErrors('address.city')}" th:errors="*{address.city}"></p>
+            </div>
 
-        <label for="mainStreet">Calle Principal:</label>
-        <input type="text" id="mainStreet" name="mainStreet" placeholder="Main Street" th:field="*{address.mainStreet}">
-        <p th:text="${#fields.hasErrors('address.mainStreet')}" th:errors="*{address.mainStreet}"></p>
+            <div class="fieldContainer">
+                <label for="mainStreet">Calle Principal:</label>
+                <input type="text" id="mainStreet" name="mainStreet" placeholder="Main Street"
+                       th:field="*{address.mainStreet}">
+                <p th:text="${#fields.hasErrors('address.mainStreet')}" th:errors="*{address.mainStreet}"></p>
+            </div>
 
-        <label for="secondaryStreet">Calle Secundaria:</label>
-        <input type="text" id="secondaryStreet" name="secondaryStreet" placeholder="Secondary Street"
-               th:field="*{address.secondaryStreet}">
-        <p th:text="${#fields.hasErrors('address.secondaryStreet')}" th:errors="*{address.secondaryStreet}"></p>
+            <div class="fieldContainer">
+                <label for="secondaryStreet">Calle Secundaria:</label>
+                <input type="text" id="secondaryStreet" name="secondaryStreet" placeholder="Secondary Street"
+                       th:field="*{address.secondaryStreet}">
+                <p th:text="${#fields.hasErrors('address.secondaryStreet')}" th:errors="*{address.secondaryStreet}"></p>
+            </div>
 
-        <input class="button_send" type="submit" value="Enviar">
+            <div class="fieldSendContainer">
+                <input class="button_send" type="submit" value="Enviar">
+            </div>
+        </fieldset>
     </form>
 </div>
 </body>
