@@ -9,20 +9,26 @@
 <div>
     <form th:action="@{/form}" th:object="${customer}" method="post">
         <h2 th:text="${tittle}"></h2>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="firstName">Nombres:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="David Jhoe">
 
-        <label for="country">Country</label>
-        <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-        </select>
+        <label for="lastName">Apellidos:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Florez Perez">
 
-        <input type="submit" value="Submit">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com">
+
+        <label for="city">Ciudad:</label>
+        <input type="text" id="city" name="city" placeholder="City">
+
+        <label for="mainStreet">Calle Principal:</label>
+        <input type="text" id="mainStreet" name="mainStreet" placeholder="Main Street">
+
+        <label for="secondaryStreet">Calle Secundaria:</label>
+        <input type="text" id="secondaryStreet" name="secondaryStreet" placeholder="Secondary Street">
+
+        <input class="button_send" type="submit" value="Enviar">
     </form>
 </div>
 </body>

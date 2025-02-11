@@ -1,22 +1,31 @@
-body{
+body {
     background-color: #000;
 }
-input[type=text], select {
+
+input {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 12px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
+label {
+    margin-left: auto;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.button_send {
+    width: 100px;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
