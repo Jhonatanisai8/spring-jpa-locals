@@ -90,4 +90,16 @@ class CustomerRepositoryTest {
         List<Customer> customers = repository.findByFirstNameContainingOrderByFirstName("U");
         customers.forEach(System.out::println);
     }
+
+    @Test
+    public void getCustomerByEmailAddress() {
+        Customer customer = repository.getCustomerByEmailAddress("damiangmail.com");
+        System.out.println(customer);
+    }
+
+    @Test
+    public void getCustomerFirstNameByEmailAddress() {
+        String firstName = repository.getCustomerFirstNameByEmailAddress("damian@gmail.com");
+        System.out.println(firstName);
+    }
 }

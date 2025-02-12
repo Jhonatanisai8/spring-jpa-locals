@@ -4,6 +4,7 @@ import com.jhonatan.springdatajpa.models.Customer;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,4 +24,10 @@ public interface CustomerRepository
     List<Customer> findByAddress_MainStreet(String addressMainStreet);
 
     List<Customer> findByFirstNameContainingOrderByFirstName(@Size(max = 50) @NotBlank String firstName);
+
+    @Query("SELECT c FROM Customer c where  c.email =?1")
+    Customer getCustomerByEmailAddress(String email);
+
+    @Query("SELECT c.firstName FROM Customer c where c.email =?1")
+    String getCustomerFirstNameByEmailAddress(String email);
 }
