@@ -28,4 +28,10 @@ public class Manager {
     @NotEmpty
     @Size(max = 50)
     private String lastNameManager;
+
+    @OneToOne(
+            mappedBy = "manager",
+            fetch = FetchType.EAGER
+    )
+    private Local local;
 }

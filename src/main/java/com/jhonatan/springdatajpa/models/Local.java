@@ -14,9 +14,9 @@ import lombok.*;
         name = "local_name_unique",
         columnNames = "local_name"
 ))
-//@ToString(
-//        exclude = "manager"
-//)
+@ToString(
+        exclude = "manager"
+)
 public class Local {
 
     @Id
@@ -36,6 +36,7 @@ public class Local {
     @OneToOne(
             //se guardara un local y a la ves el manager
             cascade = CascadeType.PERSIST,
+            //se cargan los datos del manager con la entidad
             fetch = FetchType.EAGER
             //fetch = FetchType.LAZY
     )
