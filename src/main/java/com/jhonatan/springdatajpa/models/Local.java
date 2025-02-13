@@ -3,10 +3,7 @@ package com.jhonatan.springdatajpa.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Entity
@@ -17,6 +14,9 @@ import lombok.NoArgsConstructor;
         name = "local_name_unique",
         columnNames = "local_name"
 ))
+@ToString(
+        exclude = "manager"
+)
 public class Local {
 
     @Id
@@ -33,7 +33,11 @@ public class Local {
     @Size(max = 50)
     private String localFloor;
 
-    @OneToOne
+    @OneToOne(
+            //se guardara un local y a la ves el manager
+            cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY
+    )
     @JoinColumn(
             name = "manager_id",
             referencedColumnName = "managerId"
