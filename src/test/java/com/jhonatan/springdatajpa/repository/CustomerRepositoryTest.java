@@ -130,4 +130,9 @@ class CustomerRepositoryTest {
             System.out.println(city + ", Customer: " + count);
         }
     }
+
+    @Test
+    void updateCustomeFirstNameByEmailAddress() {
+        repository.updateCustomeFirstNameByEmailAddress("David Eli","cmartinez5@email.com");
+    }
 }
