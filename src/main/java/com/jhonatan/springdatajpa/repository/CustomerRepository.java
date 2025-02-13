@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Repository
@@ -44,5 +45,12 @@ public interface CustomerRepository
     )
     Customer getCustomerByEmailAddressNativeParam(@Param("emailAddress") String email);
 
+    int countCustomerByAddress_City(String addressCity);
+
+    @Query(
+            value = "SELECT COUNT(*), customer_city FROM customers GROUP BY customer_city",
+            nativeQuery = true
+    )
+    List<Object[]> getCustomerByAddress_CityNative();
 
 }

@@ -115,4 +115,19 @@ class CustomerRepositoryTest {
         System.out.println(customer);
     }
 
+    @Test
+    void countCustomerByAddress_City() {
+        int numero = repository.countCustomerByAddress_City("Ciudad A");
+        assertTrue(numero > 0);
+    }
+
+    @Test
+    void getCustomerByAddress_CityNative() {
+        List<Object[]> customerByAddressCityNative = repository.getCustomerByAddress_CityNative();
+        for (Object[] row : customerByAddressCityNative) {
+            Integer count = ((Number) row[0]).intValue();
+            String city = (String) row[1];
+            System.out.println(city + ", Customer: " + count);
+        }
+    }
 }
