@@ -144,4 +144,12 @@ class CustomerRepositoryTest {
         String firstName = "David Eli";
         repository.updateCustomerAddressByFirstNameNative(customerCity, customerMainStreet, customerSecondaryStreet, firstName);
     }
+
+    @Test
+    void updateEmailAddressByFirstNameAndLastNameNative() {
+        String emailAddress = "test04@gmail.com";
+        String firstName = "David Eli";
+        String lastName = "Martínez";
+        repository.updateEmailAddressByFirstNameAndLastNameNative(emailAddress, firstName, lastName);
+    }
 }
