@@ -55,6 +55,17 @@ public interface CustomerRepository
     )
     void updateCustomeFirstNameByEmailAddress(@Param("firstName") String firstName, @Param("emailAddress") String emailAddress);
 
+    @Transactional
+    @Modifying
+    @Query(
+            value = "UPDATE customers SET customer_city  = :customerCity, customer_main_street = :customerMainStreet,customer_secondary_street= :customerSecondaryStreet WHERE first_name= :firstName",
+            nativeQuery = true
+    )
+    void updateCustomerAddressByFirstNameNative(@Param("customerCity") String customerCity,
+                                                @Param("customerMainStreet") String customerMainStreet,
+                                                @Param("customerSecondaryStreet") String customerSecondaryStreet,
+                                                @Param("firstName") String firstName);
+
     int countCustomerByAddress_City(String addressCity);
 
     @Query(

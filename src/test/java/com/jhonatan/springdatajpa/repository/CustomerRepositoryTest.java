@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -133,6 +133,15 @@ class CustomerRepositoryTest {
 
     @Test
     void updateCustomeFirstNameByEmailAddress() {
-        repository.updateCustomeFirstNameByEmailAddress("David Eli","cmartinez5@email.com");
+        repository.updateCustomeFirstNameByEmailAddress("David Eli", "cmartinez5@email.com");
+    }
+
+    @Test
+    void updateCustomerAddressByFirstNameNative() {
+        String customerCity = "city01";
+        String customerMainStreet = "mainStreet01";
+        String customerSecondaryStreet = "secondaryStreet01";
+        String firstName = "David Eli";
+        repository.updateCustomerAddressByFirstNameNative(customerCity, customerMainStreet, customerSecondaryStreet, firstName);
     }
 }
