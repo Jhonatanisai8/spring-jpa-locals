@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -30,4 +31,18 @@ public interface CustomerRepository
 
     @Query("SELECT c.firstName FROM Customer c where c.email =?1")
     String getCustomerFirstNameByEmailAddress(String email);
+
+    @Query(
+            value = "SELECT * FROM customers WHERE email_address = ?1",
+            nativeQuery = true
+    )
+    Customer getCustomerByEmailAddressNative(String email);
+
+    @Query(
+            value = "SELECT * FROM customers WHERE email_address = :emailAddress",
+            nativeQuery = true
+    )
+    Customer getCustomerByEmailAddressNativeParam(@Param("emailAddress") String email);
+
+
 }

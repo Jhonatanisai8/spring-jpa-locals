@@ -102,4 +102,17 @@ class CustomerRepositoryTest {
         String firstName = repository.getCustomerFirstNameByEmailAddress("damian@gmail.com");
         System.out.println(firstName);
     }
+
+    @Test
+    void getCustomerByEmailAddressNative() {
+        Customer customer = repository.getCustomerByEmailAddressNative("damian@gmail.com");
+        System.out.println(customer);
+    }
+
+    @Test
+    void getCustomerByEmailAddressNativeParam() {
+        Customer customer = repository.getCustomerByEmailAddressNativeParam("damian@gmail.com");
+        System.out.println(customer);
+    }
+
 }
