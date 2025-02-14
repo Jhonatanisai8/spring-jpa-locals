@@ -69,4 +69,8 @@ class LocalRepositoryTest {
     void testFindAllLocalsWithOrders() {
         repository.findAll().forEach(System.out::println);
     }
+
+    @Test
+    void testFindAllOrdersByLocalId() {
+    }
 }
