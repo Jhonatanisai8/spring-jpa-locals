@@ -17,7 +17,7 @@ public class CustomerValidador
 
     @Override
     public void validate(Object target, Errors errors) {
-        Customer customer = (Customer) target;
+        //Customer customer = (Customer) target;
         //si esta vacio o tiene espacios en blanco
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address.city", "NotEmpty");
@@ -27,16 +27,16 @@ public class CustomerValidador
 //            errors.rejectValue("email", "Pattern.customer.email", "El formato del correo es inválido");
 //        }
 
-        if (customer.getPhone() == null) {
-            errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
-            return;
-        }
-        if (customer.getPhone() <= 900000000) {
-            errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
-        }
-        if (customer.getPhone() >= 999999999) {
-            errors.rejectValue("phone", "Max.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
-        }
+//        if (customer.getPhone() == null) {
+//            errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
+//            return;
+//        }
+//        if (customer.getPhone() <= 900000000) {
+//            errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
+//        }
+//        if (customer.getPhone() >= 999999999) {
+//            errors.rejectValue("phone", "Max.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
+//        }
 
     }
 }

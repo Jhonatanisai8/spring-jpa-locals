@@ -58,7 +58,7 @@ public class Customer {
     private Address address;
 
     @NotNull
-//    @Min(900000000)
-//    @Max(999999999)
+    @Min(900000000)
+    @Max(999999999)
     private Integer phone;
 }
