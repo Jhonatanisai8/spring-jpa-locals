@@ -17,15 +17,15 @@ public class CustomerValidador
 
     @Override
     public void validate(Object target, Errors errors) {
-        Customer customer = (Customer) target;
+        //Customer customer = (Customer) target;
         //si esta vacio o tiene espacios en blanco
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address.city", "NotEmpty");
 
-        //otra forma de validar
-        if (!customer.getEmail().matches("(?i)^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$")) {
-            errors.rejectValue("email", "Pattern.customer.email", "El formato del correo es inválido");
-        }
+//        //otra forma de validar
+//        if (!customer.getEmail().matches("(?i)^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$")) {
+//            errors.rejectValue("email", "Pattern.customer.email", "El formato del correo es inválido");
+//        }
 
     }
 }

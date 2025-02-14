@@ -1,27 +1,36 @@
+
+bod {
+    background-color: #494850;
+}
+
 h1 {
     text-align: center;
 }
 
-div {
+.contenedor {
+    background-color: #D8D8F6;
+    padding: 20px 0;
     max-width: 500px;
-    margin: auto;
-    background-color: #4CAF50;
+    margin: 40px auto auto;
+    box-shadow: 0 0 45px #D8D8F6;
+    border-radius: 8px;
 }
 
 ul {
-    background: #4CAF50;
+    background: #978897;
     padding: 20px;
 }
 
 li {
-    background: #4CAF50;
+    background: #D8D8F6;
     color: darkred;
     padding: 5px;
     margin-left: 35px;
+    border-radius: 3px;
 }
 
 ul li {
-    background: #4CAF50;
+    background: #D8D8F6;
     color: darkblue;
     margin: 5px;
 }

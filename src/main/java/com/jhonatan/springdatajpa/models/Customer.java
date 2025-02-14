@@ -1,5 +1,6 @@
 package com.jhonatan.springdatajpa.models;
 
+import com.jhonatan.springdatajpa.validation.anotations.EmailRegex;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -41,14 +42,13 @@ public class Customer {
     private Long customerId;
 
     @Size(max = 50)
-    //@NotBlank
     private String firstName;
 
     @NotEmpty
     @Size(max = 50)
     private String lastName;
 
-    @NotEmpty
+    @EmailRegex
     @Size(max = 50)
     @Column(
             name = "email_address",
@@ -56,9 +56,6 @@ public class Customer {
     )
     private String email;
 
-    //    private String customerCity;
-//    private String customerMainStreet;
-//    private String customerSecondaryStreet;
     @Embedded
     @Valid
     private Address address;
