@@ -3,10 +3,7 @@ package com.jhonatan.springdatajpa.models;
 import com.jhonatan.springdatajpa.validation.anotations.EmailRegex;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -59,4 +56,9 @@ public class Customer {
     @Embedded
     @Valid
     private Address address;
+
+    @NotNull
+    @Min(900000000)
+    @Max(999999999)
+    private Integer phone;
 }

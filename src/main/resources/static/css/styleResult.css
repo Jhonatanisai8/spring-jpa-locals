@@ -1,5 +1,5 @@
 
-bod {
+body {
     background-color: #494850;
 }
 
@@ -19,6 +19,8 @@ h1 {
 ul {
     background: #978897;
     padding: 20px;
+    border-radius: 10px;
+    margin: 40px;
 }
 
 li {

@@ -51,6 +51,14 @@
                      th:errors="*{address.secondaryStreet}"></div>
             </div>
 
+            <div class="fieldContainer">
+                <label for="phone">Teléfono: </label>
+                <input type="text" id="phone" name="phone" placeholder="999666555"
+                       th:field="*{phone}">
+                <div th:text="${#fields.hasErrors('phone')}"
+                     th:errors="*{phone}"></div>
+            </div>
+
             <div class="fieldSendContainer">
                 <input class="button_send" type="submit" value="Enviar">
             </div>
