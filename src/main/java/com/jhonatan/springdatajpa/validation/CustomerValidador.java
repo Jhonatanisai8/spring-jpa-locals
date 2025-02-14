@@ -26,6 +26,11 @@ public class CustomerValidador
 //        if (!customer.getEmail().matches("(?i)^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$")) {
 //            errors.rejectValue("email", "Pattern.customer.email", "El formato del correo es inválido");
 //        }
+
+        if (customer.getPhone() == null) {
+            errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
+            return;
+        }
         if (customer.getPhone() <= 900000000) {
             errors.rejectValue("phone", "Min.customer.phone", "El número de teléfono debe tener exactamente 9 dígitos.");
         }
