@@ -53,7 +53,7 @@
 
             <div class="fieldContainer">
                 <label for="phone">Teléfono: </label>
-                <input type="text" id="phone" name="phone" placeholder="999666555"
+                <input type="text" id="phone" name="phone" placeholder="+51 999666555"
                        th:field="*{phone}">
                 <div th:text="${#fields.hasErrors('phone')}"
                      th:errors="*{phone}"></div>
