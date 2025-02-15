@@ -40,9 +40,9 @@ public class Local {
             //se guardara un local y a la ves el manager
             cascade = CascadeType.PERSIST,
             //se cargan los datos del manager con la entidad
-            fetch = FetchType.EAGER,
+            fetch = FetchType.EAGER
             //fetch = FetchType.LAZY
-            optional = false //fuerza a guardar un manager
+            //optional = false //fuerza a guardar un manager
     )
     @JoinColumn(
             name = "manager_id",
@@ -50,14 +50,14 @@ public class Local {
     )
     private Manager manager;
 
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER //trae las ordenes de cada local
-    )
-    @JoinColumn(
-            name = "local_id",
-            referencedColumnName = "localId"
-    )
-    private List<Order> orders;
+//    @OneToMany(
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.EAGER //trae las ordenes de cada local
+//    )
+//    @JoinColumn(
+//            name = "local_id",
+//            referencedColumnName = "localId"
+//    )
+//    private List<Order> orders;
 
 }

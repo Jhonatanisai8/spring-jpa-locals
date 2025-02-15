@@ -29,4 +29,15 @@ public class Order {
     @Column(nullable = false)
     private Double orderPrice;
 
+    //relacion de muchos a uno
+    //muchas ordenes pertenecen a un local
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "local_id",
+            referencedColumnName = "localId"
+    )
+    private Local local;
+
 }

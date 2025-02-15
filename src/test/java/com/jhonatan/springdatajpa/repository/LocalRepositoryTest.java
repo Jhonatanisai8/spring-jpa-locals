@@ -59,7 +59,7 @@ class LocalRepositoryTest {
                 .localName("Tienda Juanito")
                 .localFloor("Piso 6")
                 .manager(manager)
-                .orders(List.of(order01, order02))
+                //.orders(List.of(order01, order02))
                 .build();
 
         repository.save(local);
