@@ -14,7 +14,7 @@ h1 {
     max-width: 500px;
     margin: 40px auto auto;
     box-shadow: 0 0 45px #D8D8F6;
-    border-radius: 8px;
+    border-radius: 15px;
 }
 
 ul {
@@ -28,8 +28,8 @@ li {
     background: #D8D8F6;
     color: darkred;
     padding: 5px;
-    margin-left: 35px;
     border-radius: 3px;
+    margin: 10px;
 }
 
 ul li {
