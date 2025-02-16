@@ -1,12 +1,11 @@
 package com.jhonatan.springdatajpa.repository;
 
-import com.jhonatan.springdatajpa.models.Local;
-import com.jhonatan.springdatajpa.models.Manager;
-import com.jhonatan.springdatajpa.models.Order;
+import com.jhonatan.springdatajpa.models.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,6 +70,40 @@ class LocalRepositoryTest {
     }
 
     @Test
-    void testFindAllOrdersByLocalId() {
+    void testSaveLocalWithCustomer() {
+
+        Address address = Address.builder()
+                .city("Cp4")
+                .mainStreet("Calle A")
+                .secondaryStreet("Calle A")
+                .build();
+
+        Customer customer01 = Customer.builder()
+                .firstName("David")
+                .lastName("Perez")
+                .email("david9090@gmail.com")
+                .address(address)
+                .phone(987456320)
+                .birthDate(new Date())
+                .country("United States")
+                .build();
+
+        Customer customer02 = Customer.builder()
+                .firstName("Juan Daniel")
+                .lastName("Perez")
+                .email("daniel23232@gmail.com")
+                .address(address)
+                .phone(987456320)
+                .birthDate(new Date())
+                .country("United States")
+                .build();
+
+        Local local = Local.builder()
+                .localName("Bodegita Don Pepe")
+                .localFloor("Piso 6")
+                .customers(List.of(customer01, customer02))
+                .build();
+
+        repository.save(local);
     }
 }
