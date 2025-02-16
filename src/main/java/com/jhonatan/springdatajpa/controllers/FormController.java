@@ -1,5 +1,6 @@
 package com.jhonatan.springdatajpa.controllers;
 
+import com.jhonatan.springdatajpa.editor.ConvertCapEditor;
 import com.jhonatan.springdatajpa.models.Address;
 import com.jhonatan.springdatajpa.service.customerServiceImple.CustomerServiceImplementation;
 import com.jhonatan.springdatajpa.validation.CustomerValidador;
@@ -29,6 +30,7 @@ public class FormController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.addValidators(validador);
+        binder.registerCustomEditor(String.class, new ConvertCapEditor());
     }
 
     @GetMapping("/form")
