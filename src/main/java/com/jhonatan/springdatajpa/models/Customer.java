@@ -71,5 +71,6 @@ public class Customer {
             pattern = "yyyy-MM-dd"
     )
     @NotNull
+    @Past //fecha pasada
     private Date birthDate;
 }
