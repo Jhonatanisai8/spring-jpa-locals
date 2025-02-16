@@ -38,3 +38,19 @@ ul li {
     margin: 5px;
 }
 
+.button_regresar {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #2C2C34;
+    border-radius: 10px;
+    background-color: #494850;
+    padding: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    text-align: justify;
+    margin: 15px 0;
+    padding: 20px 0;
+}
