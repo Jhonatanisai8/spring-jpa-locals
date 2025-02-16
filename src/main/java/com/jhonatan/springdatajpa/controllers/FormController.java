@@ -30,7 +30,12 @@ public class FormController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.addValidators(validador);
-        binder.registerCustomEditor(String.class, new ConvertCapEditor());
+        //binder.registerCustomEditor(String.class, new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "firstName", new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "lastName", new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "address.city", new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "address.mainStreet", new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "address.secondaryStreet", new ConvertCapEditor());
     }
 
     @GetMapping("/form")
