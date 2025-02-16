@@ -8,7 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Date;
 import java.util.Locale;
 
 @Entity
@@ -61,4 +63,13 @@ public class Customer {
     @Min(900000000)
     @Max(999999999)
     private Integer phone;
+
+    //    @Column(
+//            nullable = false
+//    )
+    @DateTimeFormat(
+            pattern = "yyyy-MM-dd"
+    )
+    @NotNull
+    private Date birthDate;
 }

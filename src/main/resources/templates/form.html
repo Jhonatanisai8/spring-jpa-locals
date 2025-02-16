@@ -59,6 +59,14 @@
                      th:errors="*{phone}"></div>
             </div>
 
+            <div class="fieldContainer">
+                <label for="birthDate">Fecha de Nacimiento: </label>
+                <input type="text" id="birthDate" name="birthDate" placeholder="yyyy-MM-dd"
+                       th:field="*{birthDate}">
+                <div th:text="${#fields.hasErrors('birthDate')}"
+                     th:errors="*{birthDate}"></div>
+            </div>
+
             <div class="fieldSendContainer">
                 <input class="button_send" type="submit" value="Enviar">
             </div>
