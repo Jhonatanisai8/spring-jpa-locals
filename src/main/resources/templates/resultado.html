@@ -17,7 +17,7 @@
         <li th:text="${customer.address.mainStreet}"></li>
         <li th:text="${customer.address.secondaryStreet}"></li>
         <li th:text="${customer.phone}"></li>
-        <li th:text="${customer.birthDate}"></li>
+        <li th:text="${#calendars.format(customer.birthDate,'yyyy/MM/dd')}"></li>
     </ul>
 
     <div class="button_regresar">
