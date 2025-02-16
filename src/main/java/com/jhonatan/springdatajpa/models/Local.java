@@ -60,4 +60,20 @@ public class Local {
 //    )
 //    private List<Order> orders;
 
+    @ManyToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinTable(
+            name = "local_customer_map",
+            joinColumns = @JoinColumn(
+                    name = "local_id",
+                    referencedColumnName = "localId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "customer_id",
+                    referencedColumnName = "customerId"
+            )
+    )
+    private List<Customer> customers;
+
 }
