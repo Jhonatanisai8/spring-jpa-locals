@@ -12,6 +12,16 @@
 
         <fieldset>
             <legend th:text="${tittleField}"></legend>
+
+            <div class="fieldContainer">
+                <label for="country">País:</label>
+                <select id="country" th:field="*{country}">
+                    <option value="">--Selecionar--</option>
+                    <option th:each="country : ${countrys}" th:text="${country}" th:value="${country}"></option>
+                </select>
+                <div th:text="${#fields.hasErrors('country')}" th:errors="*{country}"></div>
+            </div>
+
             <div class="fieldContainer">
                 <label for="firstName">Nombres:</label>
                 <input type="text" id="firstName" name="firstName" placeholder="David Jhoe" th:field="*{firstName}">

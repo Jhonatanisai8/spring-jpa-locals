@@ -11,11 +11,10 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+
+import java.util.List;
 
 @Controller
 @SessionAttributes("customer")
@@ -26,6 +25,11 @@ public class FormController {
     @Autowired
     private CustomerValidador validador;
 
+    @ModelAttribute("countrys")
+    public List<String> countrys() {
+        return List.of("EE.UU", "España", "Portugal", "Colombia");
+    }
+
     //VALIDA AL MOMENTO QUE SE ENVIA EL FORMULARIO
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -33,6 +37,7 @@ public class FormController {
         //binder.registerCustomEditor(String.class, new ConvertCapEditor());
         binder.registerCustomEditor(String.class, "firstName", new ConvertCapEditor());
         binder.registerCustomEditor(String.class, "lastName", new ConvertCapEditor());
+        binder.registerCustomEditor(String.class, "country", new ConvertCapEditor());
         binder.registerCustomEditor(String.class, "address.city", new ConvertCapEditor());
         binder.registerCustomEditor(String.class, "address.mainStreet", new ConvertCapEditor());
         binder.registerCustomEditor(String.class, "address.secondaryStreet", new ConvertCapEditor());

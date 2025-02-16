@@ -73,4 +73,8 @@ public class Customer {
     @NotNull
     @Past //fecha pasada
     private Date birthDate;
+    @NotEmpty
+
+    @Size(max = 20)
+    private String country;
 }
